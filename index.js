@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json());
 // app.use('/api', drugRoute);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 sequelize.authenticate()
   
