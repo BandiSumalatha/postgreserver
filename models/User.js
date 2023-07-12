@@ -2,7 +2,7 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('../db');
 
 const User = sequelize.define(
-  'user',
+  'users',
   {
     username: {
       type: DataTypes.STRING,
@@ -17,16 +17,14 @@ const User = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
 
+
     },
-    createdAt: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW,
-    },
+
     // ...
   },
   {
-    // Other options for the model
+    tableName: 'users', // Custom table name
+    // other options...
   }
 );
 
