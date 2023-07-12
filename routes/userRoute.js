@@ -3,13 +3,15 @@ const User = require('../models/User');
 const router = express.Router();
 
 router.get('/users', async (req, res) => {
-const pageNumber=Number.parseInt(req.query.page)
-const sizeNumber=Number.parseInt(req.query.size)
-if(!Number.isNaN(pageNumber)&& pageNumber>0){
-   page=pageNumber;
+const pageAsNumber=Number.parseInt(req.query.page)
+const sizeAsNumber=Number.parseInt(req.query.size)
+let page=0;
+if(!Number.isNaN(pageAsNumber)&& pageAsNumber>0){
+   page=pageAsNumber;
 }
-if(!Number.isNaN(sizeNumber)&& sizeNumber>0){
-size=sizeNumber
+let size;
+if(!Number.isNaN(sizeAsNumber)&& sizeAsNumber>0 ){
+size=sizeAsNumber
 }
 
   try {
